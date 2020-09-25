@@ -1,0 +1,14 @@
+GET http://localhost:5000/api/products
+
+###
+POST http://localhost:5000/api/products
+Content-Type: application/json
+
+
+{
+    "product_id": "1",
+    "title": "Product 01",
+    "price": 25,
+    "description": "Description",
+    "content": "Content"
+}
