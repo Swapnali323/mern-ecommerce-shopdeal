@@ -7,15 +7,18 @@ import ProductContainer from '../../utils/productContainer/ProductContainer'
 
 
 export default function DetailProduct() {
-    const params = useParams()
-
     const value = useContext(GobalState)
+    const params = useParams()
+    const [isLogged] = value.isLogged
+    
     const [products] = value.products
     const [product, setProduct] = useState([])
     const [related, setRelated] = useState([])
 
     const addCart = value.addCart
-
+    const user = {
+        display: isLogged ? 'inline-block' : 'none'
+    }
 
     useEffect(() =>{
         if(params){
@@ -46,10 +49,21 @@ export default function DetailProduct() {
                             <p>{item.description}</p>
                             
                             <p>Sold: {item.sold}</p>
+                            {/* <li style={{display:isLogged? <Link to="/cart" className="cart"
+                            onClick={() => addCart(item._id)}>
+                                Add to Cart
+                            </Link> 
+                            :<Link to="/login" className="cart"
+                            onClick={() => addCart(item._id)}>
+                                Add to Cart
+                            </Link>   }}>
+
+                            </li> */}
                             <Link to="/cart" className="cart"
                             onClick={() => addCart(item._id)}>
                                 Add to Cart
                             </Link>
+                            
                         </div>
                     </div>
                 ))

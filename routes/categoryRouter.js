@@ -101,6 +101,6 @@ router.route('/category/:id').delete(auth, authAdmin, categoryCtrl.deleteCategor
 *        '200':
 *            description: A successful response
 */
-router.route('/category').put(auth, authAdmin, categoryCtrl.updateCategory)
+router.route('/category/:id').put( auth, authAdmin, categoryCtrl.updateCategory)
 
 module.exports = router

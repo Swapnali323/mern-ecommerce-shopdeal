@@ -11,7 +11,7 @@
   .product_card{
     max-width: 330px;
     overflow: hidden;
-    height: 500px;
+    height: 530px;
     padding: 15px;
     box-shadow: 0 0 15px #ddd;
     margin: 10px 0;
@@ -19,7 +19,7 @@
   }
   
   .product_card img{
-    width: 100%;
+    width: 300px;
     height: 300px;
     display: block;
     object-fit: cover;
@@ -45,13 +45,13 @@
     -webkit-line-clamp: 3;
     color: #110d0d;
   }
-  .row_btn{
+  .add_btn{
     width: 100%;
-    margin-top: 10px;
+    /* margin-top: 2px; */
     display: flex;
     justify-content: space-between;
   }
-  .row_btn a{
+  .add_btn a{
     width: 50%;
     text-align: center;
     text-transform: uppercase;
@@ -60,13 +60,25 @@
     letter-spacing: 2px;
     padding: 6px;
   }
-  #btn_buy{
+  .btn_buy{
     margin-right: 5px;
     background: #555;
   }
-  #btn_view{
+  .btn_view{
     margin-left: 5px;
     background: teal;
+  }
+  .btn_buy:hover{
+    margin-right: 5px;
+    background: #555;
+    color: white;
+    text-decoration: none;
+  }
+  .btn_view:hover{
+    margin-left: 5px;
+    background: teal;
+    color: white;
+    text-decoration: none;
   }
   .product_card input{
     position: absolute;

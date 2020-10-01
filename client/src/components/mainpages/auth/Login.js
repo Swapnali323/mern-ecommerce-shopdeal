@@ -50,8 +50,15 @@ export default function Login() {
     return (
         <div className="login-page">
             {err && <h3>{err}</h3>}
-            <form onSubmit={loginSubmit}>
-                <h2>Login</h2>
+            
+            <div className="card card-container">
+            <img
+            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            alt="profile-img"
+            className="profile-img-card"
+          />
+          <form onSubmit={loginSubmit}>
+                <h2 className="text-center">Login</h2>
                 <input type="email" name="email" required placeholder="Email" 
                 value={user.email} onChange={onChangeInput} />
 
@@ -60,10 +67,10 @@ export default function Login() {
                 autoComplete="on" />
 
                 <div className="row">
-                    <button type="submit">Login</button>
+                    <button type="submit" >Login</button>
                     <Link to="/register">Register</Link>
                 </div>
-                <Google />
+               
                 {/* <GoogleLogin 
                 clientId="35746752649-8gulr2l93p5lmn3imql443bs9c3ehe86.apps.googleusercontent.com"
                 buttontext="Login"
@@ -72,8 +79,10 @@ export default function Login() {
                  cookiePolicy={'single_host_origin'}
                 /> */}
             </form>
-
-            
+            <div className="text-center"> 
+            Or want to sign in with Google Account?<br></br><br></br>
+                <Google /></div>
+            </div>
         </div>
     )
 }

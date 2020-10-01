@@ -4,7 +4,7 @@ header{
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 2px 10px -3px black;
@@ -17,11 +17,7 @@ header{
  .ok{
     background-color: purple;
  }
-  header .logo{
-    flex: 1;
-    margin-left: 10px;
-    
-  }
+
   header a{
     text-transform: uppercase;
     color: rgb(19, 17, 17);
@@ -35,10 +31,8 @@ header{
   
   header ul li:hover{
     opacity: 1;
-    /* background: rgb(76, 72, 72); */
-    /* padding: 0.7rem; */
-    /* border-radius: 5px; */
-   text-decoration: underline black;
+   text-decoration: none;
+   color: black;
   }
   .menu{
     display: none;

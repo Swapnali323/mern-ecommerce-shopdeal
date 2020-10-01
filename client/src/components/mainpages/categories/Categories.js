@@ -78,7 +78,7 @@ export default function Categories() {
                 required onChange={e => setCategory(e.target.value)} />
 
                 <button type="submit">Save</button>
-            </form>
+            </form> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div className="col">
                 {
                     categories.map(category => (

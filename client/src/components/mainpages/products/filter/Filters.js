@@ -17,7 +17,7 @@ function Filters() {
 
     return (
         <div className="filter-menu">
-            <div className="row">
+            <div>
                 <span>Filters: </span>
                 <select name="category"  onChange={handleCategory} required value={category} >
                     <option value=''>All Products</option>
@@ -36,7 +36,7 @@ function Filters() {
             placeholder="Enter what you want to search !" onChange={e => setSearch(e.target.value.toLocaleLowerCase())} />
            
 
-            <div className="row">
+            <div>
                 <span>Sort By: </span>
                 <select value={sort} onChange={e => setSort(e.target.value)} required className="sort">
                     <option value=''>Newest</option>

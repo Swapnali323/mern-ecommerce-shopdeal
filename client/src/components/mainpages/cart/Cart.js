@@ -95,13 +95,11 @@ export default function Cart() {
                     
                     <img src={product.images.url} alt="" className="img-container"  />
 
-                    <div className="box-details">
-                        <h2 title={product.title}>{product.title}</h2>
-                        <h2>Rs. {product.price * product.quantity}</h2>
-                      
-                        <p>{product.description}</p>
-                        <p className="content">{product.content}</p>
-                        
+                    <div className="box-details-cart">
+                        <h3 title={product.title}>{product.title}</h3>
+                        <h3>Rs. {product.price * product.quantity}</h3>
+                     
+                    
                         <div className="amount">
                             <button className="count" onClick={() => reduction(product._id)}> - </button>
                             <span>{product.quantity}</span>
@@ -109,8 +107,9 @@ export default function Cart() {
                         </div>
 
                         <div className="delete" onClick={() => removeProduct(product._id)}>X</div>
+                    
                     </div>
-
+                    
                 </div>
             ))
         }

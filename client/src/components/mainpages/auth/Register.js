@@ -38,8 +38,14 @@ export default function Register() {
     return (
         <div className="login-page">
             {err && <h3>{err}</h3>}
+            <div className="card card-container">
+            <img
+            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            alt="profile-img"
+            className="profile-img-card"
+          />
             <form onSubmit={registerSubmit}>
-                <h2>Register</h2>
+                <h2 className="text-center">Register</h2>
                 <input type="name" name="name" required placeholder="Name" 
                 value={user.name}  onChange={onChangeInput}/>
 
@@ -56,7 +62,7 @@ export default function Register() {
                 </div>
             </form>
 
-            
+            </div>
         </div>
     )
 }

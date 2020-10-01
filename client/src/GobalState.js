@@ -49,7 +49,7 @@ export const DataProvider = ({children}) =>{
       setCart([...cart,  {...data[0], quantity: 1}])
 
       // const token = localStorage.getItem('tokenAccess')
-      await axios.patch('user/addcart', {cart: [...cart,  {...data[0], quantity: 1}]},{
+      await axios.patch('/user/addcart', {cart: [...cart,  {...data[0], quantity: 1}]},{
         headers: {Authorization: token}
       })
 
@@ -108,7 +108,7 @@ export const DataProvider = ({children}) =>{
 
         const getHistory = async() =>{
           if(isAdmin){
-            const res = await axios.get('api/payment', {
+            const res = await axios.get('/api/payment', {
               headers: {Authorization: token}
             })
             setHistory(res.data)

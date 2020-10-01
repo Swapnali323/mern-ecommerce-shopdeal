@@ -31,9 +31,6 @@ function Header() {
         setMenu(!menu)
     }
 
-    const styleMenu = {
-        left: menu ? 0 : "-100%"
-    }
     // window.onscroll=function(){scrollFunction()};
 
     // function scrollFunction(){
@@ -46,26 +43,31 @@ function Header() {
    
 
     return (
-        <header>
-            <div className="menu" onClick={toggleMenu}>
-                <img src={Menu} alt="" width="30" />
-            </div>
+      <header>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul className="navbar-nav mr-auto">
+      <li className="nav-item active">
+       <h1><Link to="/" className="nav-link active"> {isAdmin ? 'Admin': 'Shopdeal'} <span className="sr-only">(current)</span></Link></h1> 
+      </li>
 
-            <div className="logo">
-                <h1><Link to="/"> {isAdmin ? 'Admin': 'Shopdeal'}</Link></h1>
-            </div>
+      
+    </ul>
+    <ul className="nav justify-content-end">
+                <li className="nav-item"><Link to="/" className="nav-link">{isAdmin ? 'Products': 'Shop'}</Link></li>
                 
-            <ul style={styleMenu}>
-                <li><Link to="/">{isAdmin ? 'Products': 'Shop'}</Link></li>
-                
-                <li style={admin}><Link to="/create_product">Create Products</Link></li>
-                <li style={admin}><Link to="/category">Categories</Link></li>
+                <li style={admin} className="nav-item"><Link to="/create_product" className="nav-link">Create Products</Link></li>
+                <li style={admin} className="nav-item"><Link to="/category" className="nav-link">Categories</Link></li>
                
-                <li style={user}><Link to="/history">History</Link> </li>
-                <li style={user}><Link to="/" onClick={logoutUser}>Logout</Link> </li>
+                <li style={user} className="nav-item"><Link to="/history" className="nav-link">History</Link> </li>
+                <li style={user} className="nav-item"><Link to="/" onClick={logoutUser} className="nav-link">Logout</Link> </li>
                                     
-                <li style={{display: isLogged ? "none" : "inline-block"}}>
-                    <Link to="/login">Login ✥ Register</Link>
+                <li style={{display: isLogged ? "none" : "inline-block"}} className="nav-item">
+                    <Link to="/login" className="nav-link">Login/Register</Link>
                 </li>
                 
                 <li onClick={toggleMenu}>
@@ -80,8 +82,12 @@ function Header() {
                         <img src={Cart} alt="" width="30"/>
                     </Link>
             </div>
-            
-       </header>
+  </div>
+</nav>
+ 
+          
+
+</header>
        
     )
     }

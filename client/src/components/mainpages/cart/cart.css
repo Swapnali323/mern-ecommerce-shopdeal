@@ -15,8 +15,8 @@
   }
   .delete{
     position: absolute;
-    top:0;
-    right: 5px;
+    top:40px;
+    right: 10px;
     color: crimson;
     cursor: pointer;
     font-weight: 900;
@@ -27,8 +27,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 30px;
   }
   
   .total h3{
     color: crimson;
+  }
+  .box-details-cart{
+    max-width: 500px;
+    width: 100%;
+    margin: 20px;
+   
+  }
+  /* .details-cart{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+  } */
+  /* .details-cart img{
+    max-width: 400px;
+    width: 100%;
+    margin: 20px;
+    height: 10px;
+    object-fit: cover;
+    display: block;
+  } */
+  .details.cart .img-container{
+    height: 150px;
+    width: 150px;
   }

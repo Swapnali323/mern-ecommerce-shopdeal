@@ -36,13 +36,23 @@ const categoryCtrl = {
     },
     updateCategory: async (req, res) =>{
         try {
-            const {name} = req.body;
-            await Category.findOneAndUpdate({_id: req.params.id}, {name})
-            res.json({msg: "Updated a category"})
-        } catch (err) {
-            return res.status(500).json({msg: err.message})
+            const id = req.params.id;
+            const category = await Category.findById(id);
+            if (category) {
+                category.name = req.body.name;
+             
+              const updatedcategory = await category.save();
+              if (updatedcategory) {
+                return res
+                  .status(200)
+                  .send({ message: 'Category Updated', data: updatedcategory });
+              }
+            }
+        } catch (error) {
+            return res.status(500).send({ message: error.message });
         }
-    }
+      
+       
 }
-
+}
 module.exports = categoryCtrl

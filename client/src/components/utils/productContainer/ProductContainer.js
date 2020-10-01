@@ -84,31 +84,31 @@ function ProductContainer({isAdmin, productsOutside, token, addCart}) {
                             isAdmin && <input type="checkbox" checked={product.checked}
                                         onChange={() => handleCheck(product._id)} />
                         }
-                        <img src={product.images.url} alt=""  />
+                       <img src={product.images.url} alt=""  />
                         <div className="product_box">
                             <h2 title={product.title}>{product.title}</h2>
                             <span>Rs. {product.price}</span>
                             <p>{product.description}</p>
                         </div>
-                        <div className="row_btn">
+                        <div className="add_btn">
                             {
                                 isAdmin 
                                 ? <> 
-                                    <Link id="btn_buy" to="#!"
+                                    <Link className="btn_buy" to="#!"
                                     onClick={() => deleteProduct(product._id, product.images.public_id)}>
                                         Delete
                                     </Link>
 
-                                    <Link id="btn_view" 
+                                    <Link className="btn_view" 
                                     to={`/edit_product/${product._id}`}>
                                         Edit
                                     </Link>
                                 </>
                                 : <>
-                                    <Link id="btn_buy" to="#!" onClick={() => addCart(product._id)}>
+                                    <Link className="btn_buy" to="#!" onClick={() => addCart(product._id)}>
                                         Add To cart
                                     </Link>
-                                    <Link id="btn_view" to={`/details/${product._id}`}>
+                                    <Link className="btn_view" to={`/details/${product._id}`}>
                                         View
                                     </Link>
                                 </>
